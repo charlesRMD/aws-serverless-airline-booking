@@ -25,7 +25,7 @@ deploy: ##=> Deploy services
 	$(MAKE) deploy.booking
 	$(MAKE) deploy.loyalty
 ## Enable the deploy.perftest if you need to deploy the performance test stack
-#	$(MAKE) deploy.perftest 
+#	$(MAKE) deploy.perftest
 
 delete: ##=> Delete services
 	$(MAKE) delete.booking
@@ -81,7 +81,7 @@ _install_os_packages:
 	$(info [*] Installing jq...)
 	yum install jq -y
 	$(info [*] Upgrading Python SAM CLI and CloudFormation linter to the latest version...)
-	python3 -m pip install --upgrade --user cfn-lint aws-sam-cli
+	python3 -m pip install --upgrade --user cfn-lint aws-sam-cli --use-feature=2020-resolver
 	npm -g install aws-cdk
 
 define HELP_MESSAGE
